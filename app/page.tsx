@@ -5,8 +5,7 @@ import JoinSection from '../components/JoinSection';
 export default function Home() {
   return (
     <section>
-      <Hero />
-      <JoinSection />
+      <h1>hello</h1>
     </section>
   );
 }
