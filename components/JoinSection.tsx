@@ -1,14 +1,17 @@
 "use client";
 import React, { useEffect } from 'react';
 import Button from './Button';
-import { WOW } from 'wowjs';
 import 'animate.css/animate.min.css';
 import Link from 'next/link';
 
 const JoinSection = () => {
     useEffect(() => {
+        // Dynamically import WOW.js only in the browser
         if (typeof window !== 'undefined') {
-            new WOW().init();
+            import('wowjs').then(({ WOW }) => {
+                const wow = new WOW();
+                wow.init();
+            });
         }
     }, []);
 
