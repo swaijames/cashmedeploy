@@ -151,7 +151,7 @@ export const teamMembers = [
   {
     name: 'Ishmael Oneya',
     role: 'Co-founder, Head of Credit Risk & Compliance',
-    image: '/assets/team/oneya.jpg',
+    image: '/assets/team/boss-oneya.jpg',
     social: {
 
       linkedin: 'https://linkedin.com/in/darrenrandolph',
