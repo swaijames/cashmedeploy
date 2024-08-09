@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import Button from './Button';
+import dynamic from 'next/dynamic';
+import 'animate.css/animate.min.css';
 
+const Button = dynamic(() => import('./Button'), { ssr: false });
 
 const Hero: React.FC = () => {
   const [state, setState] = useState({
@@ -70,29 +72,39 @@ const Hero: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    // Dynamically import WOW.js only in the browser
+    if (typeof window !== 'undefined') {
+        import('wowjs').then(({ WOW }) => {
+            const wow = new WOW();
+            wow.init();
+        });
+    }
+}, []);
+
   return (
-    <section className="bg-white pt-24 mt-5 md:pt-32 pb-20">
+    <section className="bg-white pt-24 mt-5 md:pt-32 pb-20 wow animate__animated animate__fadeIn">
       <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center md:flex-row md:justify-between md:text-left">
         <div className="w-full md:flex-1 mt-[-4%] mb-12 md:mb-0">
-          <h1 className="text-4xl font-extrabold text-gray-900 md:text-5xl leading-tight">
+          <h1 className="text-4xl font-extrabold text-gray-900 md:text-5xl leading-tight wow animate__animated animate__fadeInUp">
             Transform unpaid invoices into <span className="text-blue-800">immediate capital.</span>
           </h1>
-          <p className="mt-4 text-gray-600">
-            We are <span className="text-blue-600 font-bold text-justify">CashMe Tanzania</span>, an online marketplace for Invoice Discounting.
+          <p className="mt-4 text-gray-600 wow animate__animated animate__fadeInUp">
+            We are <span className="text-blue-600 font-bold">CashMe Tanzania</span>, an online marketplace for Invoice Discounting.
             <br />
             The Platform is owned and operated by Sebuys Company Limited, a Limited Company Incorporated in Tanzania.
           </p>
-          <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4">
+          <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 wow animate__animated animate__fadeInUp">
             <Button type="button" title="CashPay" variant="blue-900" />
             <Button type="button" title="How We Work?" variant="blue-900" onClick={scrollToHowItsWork} />
           </div>
         </div>
-        <div className="w-full md:flex-1 flex justify-center">
+        <div className="w-full md:flex-1 flex justify-center wow animate__animated animate__fadeInRight">
           <div className="relative w-full h-auto p-6 bg-gray-100 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Invoice Discount Calculator</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 wow animate__animated animate__fadeInUp">Invoice Discount Calculator</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-gray-700 mb-2">Invoice number</label>
+                <label className="block text-gray-700 mb-2 wow animate__animated animate__fadeInUp">Invoice number</label>
                 <input
                   type="text"
                   className="w-full p-3 bg-white border border-gray-300 rounded text-gray-700"
@@ -101,17 +113,17 @@ const Hero: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">Amount (TZS)</label>
+                <label className="block text-gray-700 mb-2 wow animate__animated animate__fadeInUp">Amount (TZS)</label>
                 <input
                   type="text"
                   className="w-full p-3 bg-white border border-gray-300 rounded text-gray-700"
                   value={amount}
                   onChange={handleAmountChange}
                 />
-                {error && <p className="text-red-600 mt-2">{error}</p>}
+                {error && <p className="text-red-600 mt-2 wow animate__animated animate__fadeInUp">{error}</p>}
               </div>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 wow animate__animated animate__fadeInUp">
               <label className="block text-gray-700 mb-2">Select payment terms</label>
               <div className="flex space-x-4">
                 {[30, 60, 90].map((term) => (
@@ -125,7 +137,7 @@ const Hero: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-white p-4 rounded-lg shadow wow animate__animated animate__fadeInUp">
               <p className="text-gray-700 mb-2"><strong>Amount Entered:</strong> TZS {amountNumber.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               <p className="text-gray-700 mb-2"><strong>Discount Amount (Pay in {paymentTerm} days):</strong> TZS {discountAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               <p className="text-gray-700 mb-2"><strong>Processing Fee:</strong> TZS {processingFee.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>

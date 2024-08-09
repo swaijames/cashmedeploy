@@ -17,6 +17,7 @@ type Testimonial = {
     image: string;
     rating: number;
 };
+
 // Dynamic import of WOW.js
 const TestimonialSection: React.FC<{ testimonials: Testimonial[] }> = ({ testimonials }) => {
     useEffect(() => {
@@ -36,19 +37,16 @@ const TestimonialSection: React.FC<{ testimonials: Testimonial[] }> = ({ testimo
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={20}
-                    slidesPerView={1} // Default to 1 slide per view
+                    slidesPerView={1} // Default to 1 slide per view on small screens
                     navigation
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 5000 }}
                     breakpoints={{
-                        640: {
-                            slidesPerView: 1, // 1 slide per view for small screens
-                        },
                         768: {
-                            slidesPerView: 2, // 2 slides per view for medium screens
+                            slidesPerView: 2, // 2 slides per view for medium screens (md)
                         },
-                        1024: {
-                            slidesPerView: 3, // 3 slides per view for large screens
+                        1280: {
+                            slidesPerView: 2, // 2 slides per view for extra-large screens (xl)
                         },
                     }}
                     className="wow animate__animated animate__fadeIn"
