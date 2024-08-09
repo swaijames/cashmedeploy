@@ -64,7 +64,7 @@ const TestimonialSection: React.FC<{ testimonials: Testimonial[] }> = ({ testimo
                                 </div>
                                 <h3 className="text-xl font-semibold mb-2">{testimonial.name}</h3>
                                 <p className="text-gray-600 mb-2">{testimonial.role}</p>
-                                <p className="text-gray-600 mb-4 text-justify">{testimonial.text}</p>
+                                <p className="text-gray-600 mb-4 text-center">{testimonial.text}</p>
                                 <div className="flex justify-center mb-2">
                                     {Array.from({ length: testimonial.rating }).map((_, i) => (
                                         <span key={i} className="text-yellow-400">&#9733;</span>
