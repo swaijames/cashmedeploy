@@ -50,7 +50,7 @@ const FeatureSection2 = () => {
                         <div className="flex justify-center items-center wow animate__animated animate__fadeInLeft">
                             <Image
                                 alt="feature-image"
-                                src="/assets/citizen.jpg"
+                                src="/assets/citizen-min.jpg"
                                 width={700}
                                 height={750}
                                 className="w-full h-[520px] max-w-full rounded-xl "
