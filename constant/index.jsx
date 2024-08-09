@@ -151,7 +151,7 @@ export const teamMembers = [
   {
     name: 'Ishmael Oneya',
     role: 'CashMe Tanzania,Head of Credit Risk & Compliance',
-    image: '/assets/team/boss-gumo.jpg',
+    image: '/assets/team/oneya.jpg',
     social: {
 
       linkedin: 'https://linkedin.com/in/darrenrandolph',
@@ -161,7 +161,7 @@ export const teamMembers = [
   {
     name: 'Ombeni Uhuru ',
     role: 'CashMe Tanzania,Head of Trading & Investment',
-    image: '/assets/team/boss-gumo.jpg',
+    image: '/assets/team/ombenii.jpg',
     social: {
 
       linkedin: 'https://linkedin.com/in/darrenrandolph',
