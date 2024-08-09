@@ -63,7 +63,9 @@ const OurTeam: React.FC = () => {
                                         src={member.image}
                                         alt={member.name}
                                         layout="fill"
-                                        className="rounded-full object-cover"
+                                        className="rounded-full"
+                                        objectFit="cover"
+                                        objectPosition='top'
                                         quality={100}
                                     />
                                 </div>

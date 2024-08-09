@@ -140,7 +140,7 @@ export const testimonials = [
 export const teamMembers = [
   {
     name: 'Gumodoka Mehuna',
-    role: 'CO founder & Cheaf Executive Officer',
+    role: 'Co-founder, Cheaf Executive Officer',
     image: '/assets/team/boss-gumo.jpg',
     social: {
 
@@ -150,7 +150,7 @@ export const teamMembers = [
   },
   {
     name: 'Ishmael Oneya',
-    role: 'CashMe Tanzania,Head of Credit Risk & Compliance',
+    role: 'Co-founder, Head of Credit Risk & Compliance',
     image: '/assets/team/oneya.jpg',
     social: {
 
@@ -160,7 +160,7 @@ export const teamMembers = [
   },
   {
     name: 'Ombeni Uhuru ',
-    role: 'CashMe Tanzania,Head of Trading & Investment',
+    role: 'Co-founder, Head of Trading & Investment',
     image: '/assets/team/ombenii.jpg',
     social: {
 
@@ -169,9 +169,9 @@ export const teamMembers = [
     },
   },
   {
-    name: 'Phoibe Manase',
-    role: 'CashMe Tanzania,Head of Finance',
-    image: '/assets/team/madam2.jpg',
+    name: 'Phoibe Mkumbwa',
+    role: 'Co-founder, Head of Finance & Administration',
+    image: '/assets/team/madam3.jpg',
     social: {
 
       linkedin: 'https://linkedin.com/in/ayatblack',
